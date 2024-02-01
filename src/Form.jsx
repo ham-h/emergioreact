@@ -2,6 +2,7 @@
 import Display from "./Display";
 import { useState } from "react";
 import "./App.css";
+import { Link } from "react-router-dom";
 
 const Form = () => {
   const [input, setInput] = useState({
@@ -17,10 +18,10 @@ const Form = () => {
     const value = e.target.value;
     setInput({ ...input, [name]: value });
   };
-    const sub = (e) => {
-      e.preventDefault();
-
-    };
+    // const sub = (e) => {
+    //   e.preventDefault();
+     
+    // };
   const handlefocus = () => {
     setfocus(true);
   };
@@ -101,7 +102,7 @@ const Form = () => {
           <br></br>
           {/* <Link to="/dis"> */}
             {" "}
-          
+          <Link to='/game'>
             <button
               style={{
                 backgroundColor: "green",
@@ -109,10 +110,11 @@ const Form = () => {
                 borderRadius: "10px",
                 color: "white",
               }}
-           onClick={sub} >
+            >
+              {/* onClick={sub} */}
               submit
-            </button>
-          {/* </Link> */}
+            </button></Link>
+        
         </div>
       </form>
       {/* <Outlet /> */}
